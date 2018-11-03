@@ -42,7 +42,7 @@
 	<div id="oblETC1h" style="width: 400px;"></div>
     <br>
 
-    <form action="" method="post">
+    <form action="order.php" method="post">
 
         <div class="row">
         <fieldset>
@@ -74,24 +74,58 @@
 
                 <legend>Crypto</legend>
                 <div class="col">
-                    <div><label><input type="checkbox" disabled checked>opcja 1</label></div>
-                    <div><label><input type="checkbox" disabled checked>opcja 2</label></div>
-                    <div><label><input type="checkbox">opcja 3</label></div>
+                    <div><label><input type="checkbox" name="tab[]" value="1" disabled checked>opcja 1</label></div>
+                    <div><label><input type="checkbox" name="tab[]" value="2" disabled checked>opcja 2</label></div>
+                    <div><label><input type="checkbox" name="tab[]" value="3">opcja 3</label></div>
                 </div>
 
                 <div class="col">
-                    <div><label><input type="checkbox">opcja 4</label></div>
-                    <div><label><input type="checkbox">opcja 5</label></div>
-                    <div><label><input type="checkbox">opcja 6</label></div>
+                    <div><label><input type="checkbox" name="tab[]" value="4">opcja 4</label></div>
+                    <div><label><input type="checkbox" name="tab[]" value="5">opcja 5</label></div>
+                    <div><label><input type="checkbox" name="tab[]" value="6">opcja 6</label></div>
                 </div>
                 <div class="col">
-                    <div><label><input type="checkbox">opcja 7</label></div>
-                    <div><label><input type="checkbox">opcja 8</label></div>
-                    <div><label><input type="checkbox">opcja 9</label></div>
+                    <div><label><input type="checkbox" name="tab[]" value="7">opcja 7</label></div>
+                    <div><label><input type="checkbox" name="tab[]" value="8">opcja 8</label></div>
+                    <div><label><input type="checkbox" name="tab[]" value="9">opcja 9</label></div>
                 </div>
 
             </fieldset>
 
+        </div>
+
+        <div class="row">
+
+            <label for="crypto2">Crypto2</label>
+
+            <div style="margin-top:10px;">
+            <select id="crypto2" name="cry2[]" multiple size="4">
+
+                <option value="btc">BTC</option>
+                <option value="ltc">LTC</option>
+                <option value="etc" selected>ETC</option>
+                <option value="iota">IOTA</option>
+            </select>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <label>Name <input type="text" name="name" placeholder="name..."></label>
+            <label>Pass<input type="password" name="pass"></label>
+            <label>Search<input type="search" name="phrase"></label>
+
+        </div>
+
+        <div class="row">
+            <label>How much <input type="number" name="howMuch" step="0.1"></label>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save!">
+            <!--<input type="button" value="Order!">-->
+            <!--<button>Order!</button>-->
         </div>
 
     </form>
