@@ -7,7 +7,16 @@
 		<meta charset="utf-8">
 		
 		<style>
-			
+			.row
+            {
+                margin: 20px 10px;
+            }
+
+            .col
+            {
+                display: inline-block;
+                margin: 0px 10px;
+            }
 			
 		</style>
 		
@@ -31,6 +40,62 @@
 	<div id="oblETC7d" style="width: 400px;"></div>
 	<div id="oblETC24h" style="width: 400px;"></div>
 	<div id="oblETC1h" style="width: 400px;"></div>
+    <br>
+
+    <form action="" method="post">
+
+        <div class="row">
+        <fieldset>
+            <label>Krypto</label>
+
+            <div><label><input type="radio" value="1" name="kryptowaluta" checked> Bitcoin</label></div>
+            <div><label><input type="radio" value="2" name="kryptowaluta"> Iota</label></div>
+            <div><label><input type="radio" value="3" name="kryptowaluta"> Cardano</label></div>
+        </fieldset>
+
+        </div>
+        <div class="row">
+
+        <label for="crypto">Crypto</label>
+        <select id="crypto" name="cry">
+
+            <option value="btc">BTC</option>
+            <option value="ltc">LTC</option>
+            <option value="etc" selected>ETC</option>
+            <option value="iota">IOTA</option>
+
+        </select>
+
+        </div>
+
+        <div class="row">
+
+            <fieldset>
+
+                <legend>Crypto</legend>
+                <div class="col">
+                    <div><label><input type="checkbox" disabled checked>opcja 1</label></div>
+                    <div><label><input type="checkbox" disabled checked>opcja 2</label></div>
+                    <div><label><input type="checkbox">opcja 3</label></div>
+                </div>
+
+                <div class="col">
+                    <div><label><input type="checkbox">opcja 4</label></div>
+                    <div><label><input type="checkbox">opcja 5</label></div>
+                    <div><label><input type="checkbox">opcja 6</label></div>
+                </div>
+                <div class="col">
+                    <div><label><input type="checkbox">opcja 7</label></div>
+                    <div><label><input type="checkbox">opcja 8</label></div>
+                    <div><label><input type="checkbox">opcja 9</label></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+    </form>
+
 		
 	<script>
 		 
@@ -74,13 +139,14 @@
 		var d7_etc = jsonObj.data[1027].quotes.USD.percent_change_7d;
 		var h24_etc = jsonObj.data[1027].quotes.USD.percent_change_24h;
 		var h1_etc = jsonObj.data[1027].quotes.USD.percent_change_1h;
-		
-		document.getElementById("oblBTC").innerHTML = "BTC " + a;
-		document.getElementById("oblBTC7d").innerHTML = "7D " + d7_btc;
+
+
+		document.getElementById("oblBTC").innerHTML = "BTC $" + Math.round(a*100)/100;;
+        document.getElementById("oblBTC7d").innerHTML = "7D " + d7_btc;
 		document.getElementById("oblBTC24h").innerHTML = "24H " + h24_btc;
 		document.getElementById("oblBTC1h").innerHTML = "1H " + h1_btc;
 		
-		document.getElementById("oblETC").innerHTML = "ETC " + b;
+		document.getElementById("oblETC").innerHTML = "ETC $" + Math.round(b*100)/100;;
 		document.getElementById("oblETC7d").innerHTML = "7D " + d7_etc;
 		document.getElementById("oblETC24h").innerHTML = "24H " + h24_etc;
 		document.getElementById("oblETC1h").innerHTML = "1H " + h1_etc;
@@ -129,9 +195,7 @@
 			} else {
 			document.getElementById("oblETC1h").style.color = 'red';
 			}
-		
-		
-		
+
 	</script>
 	
 </body>
